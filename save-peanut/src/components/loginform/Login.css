@@ -1,0 +1,140 @@
+body {
+  background: white;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.register {
+  max-width: 920px;
+  width: 920px;
+  height: 550px;
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 1px 6px 10px #e9ecef;
+  background-color: white;
+}
+
+.signin {
+  margin-bottom: 5px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-bottom: solid 1px #000;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="email"]:hover::placeholder,
+input[type="password"]:hover::placeholder {
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: #ff847c;
+  color: #fff;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 40px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="submit"]:hover {
+  background-color: #d7a9e3;
+  color: white;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  gap: 2em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.register .col-1 {
+  margin: auto;
+  padding: 3em 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .col-2 img {
+  width: 480px;
+  height: 530px;
+  object-fit: cover;
+  align-self: flex-end;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: none;
+  margin: 10px;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.logo {
+  width: 100px;
+  margin-top: -90px;
+}
+.loginlink {
+  font-size: 0.6rem;
+  margin-top: 10px;
+  color: #7f7f7f;
+}
+.a {
+  color: hotpink;
+}
+.signin {
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 860px) {
+  .register .col-2 img {
+    display: initial;
+  }
+}

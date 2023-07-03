@@ -1,0 +1,122 @@
+/*===================GOOGLE FONTS==============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /*=======COLORS========*/
+  --text-color-dark: #1e1e1e;
+  --text-color-light: #ffffff;
+  --action-color-1: #ff847c;
+  --action-color-2: #ff847c;
+  --body-color: #ffffff;
+
+  /*=====Font and typography======*/
+  --body-font: "Poppins", sans-serif;
+  /* .5rem = 8px | 1rem = 16px...*/
+  --h1-font-size: 6.1875rem;
+  --normal-font-size: 1.5rem;
+  --small-font-size: 0.75rem;
+
+  /*======== Font weight ======*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+/*======== BASE ========*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color-dark);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*======== REUSEABLE CSS CLASSES ========*/
+.selection {
+  padding: 6rem 0 2rem;
+}
+
+.section__title {
+  margin-top: 118px;
+  font-size: var(--h1-font-size);
+  color: var(--text-color-dark);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--h2-font-size);
+  margin-bottom: 4rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/*======== lAYOUT ========*/
+.container {
+  max-width: 960px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*======== BUTTONS ========*/
+.button {
+  display: inline-block;
+  color: var(--container-color);
+  padding: 1.25rem 2rem;
+  border-radius: 3.375rem;
+  font-weight: var(--font-medium);
+}
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
