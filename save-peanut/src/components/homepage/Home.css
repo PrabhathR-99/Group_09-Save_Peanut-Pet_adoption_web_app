@@ -1,0 +1,81 @@
+/* Home.css */
+
+.home-container {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  margin-top: 140px; /* Add a 80px top margin */
+}
+
+.buttons-container {
+  position: absolute;
+  bottom: 40px; /* Adjust as needed */
+  left: 80px; /* Adjust as needed */
+  display: flex;
+  gap: 10px;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff; /* Further reduced border thickness */
+  padding: 6px 12px; /* Reduced padding for smaller size */
+  font-size: 16px; /* Smaller font size */
+  border-radius: 40px; /* Smaller border radius */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-outline:hover {
+  background-color: #d7a9e3;
+  color: #fff;
+}
+
+.home-container2 {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.image-container2 {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.image-container2 img {
+  width: 100%;
+  height: 100%;
+}
+.image-container2 img {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px; /* Add a 80px top margin */
+}
+
+.postsco {
+  margin-top: 40px;
+}

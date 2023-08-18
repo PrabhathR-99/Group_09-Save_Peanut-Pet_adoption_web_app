@@ -1,0 +1,35 @@
+/* UserProfile.css */
+
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-button,
+.delete-button {
+  margin-top: 10px;
+}
+
+.user-details {
+  flex: 1;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+/* Additional styling and responsiveness can be added as needed */

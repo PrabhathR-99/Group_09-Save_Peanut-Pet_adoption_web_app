@@ -1,0 +1,97 @@
+/* SocialMediaPost.css */
+
+.social-media-post {
+  margin-top: 10px;
+  width: 580px; /* Set the post width */
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 10px; /* Reduce the margin */
+  position: relative;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder color */
+  margin-right: 10px;
+}
+
+.owner-details {
+  display: flex;
+  align-items: center;
+}
+
+.cross-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ccc; /* Placeholder color */
+}
+
+.post-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.post-content {
+  display: flex;
+  align-items: center;
+}
+
+.post-photo {
+  width: 300px;
+  height: 300px;
+  background-color: #eee; /* Placeholder color */
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.post-details {
+  flex: 2;
+}
+
+.post-details p {
+  margin: 5px 0;
+}
+
+.post-details a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.post-footer {
+  text-align: center;
+}
+
+.like-icon {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.like-icon.liked {
+  color: #ff0000; /* Red color for liked */
+}
+
+.post-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px; /* Adjust to fit two 450px wide posts and spacing */
+  margin: 20px auto 0;
+  gap: 40px; /* Increase the gap between posts */
+}
