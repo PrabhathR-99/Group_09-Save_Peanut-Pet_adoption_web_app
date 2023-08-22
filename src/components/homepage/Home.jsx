@@ -12,33 +12,33 @@ function Home() {
       <div><Navbar /></div>
       <div className="home-container">
         <div className="image-container">
-        <img alt='save peanut logo' className="logo" src={Cover} />
+          <img alt='save peanut logo' className="logo" src={Cover} />
           <div className="buttons-container">
-            <button className="button-outline">Button 1</button>
-            <button className="button-outline">Button 2</button>
+            <button className="button-outline">Find a Pet</button>
+            <button className="button-outline">Add Pet</button>
           </div>
         </div>
       </div>
 
       <div className="home-container2">
         <div className="image-container2">
-        <img alt='save peanut logo' className="logo" src={Cover2} />
-         
+          <img alt='save peanut logo' className="logo" src={Cover2} />
+
         </div>
       </div>
       <div postsco>
-      <div className="post-container">
-      <SocialMediaPost />
-      <SocialMediaPost />
-    </div>
-    <div className="post-container">
-      <SocialMediaPost />
-      </div>
+        <div className="post-container">
+          <SocialMediaPost />
+          <SocialMediaPost />
+        </div>
+        <div className="post-container">
+          <SocialMediaPost />
+        </div>
       </div>
       <div>
         <Footer />
       </div>
-    
+
     </div>
   );
 }
