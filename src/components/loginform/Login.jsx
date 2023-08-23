@@ -1,13 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Login.css"
 import LogoPng from "./assests/LogoPng.png"
 import Bgimg from "./assests/LoginBg2.png"
 import { Link } from "react-router-dom";
+import { register } from '../../api/auth';
+import { useStore } from '../../store';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { setAuthenticated, authenticated } = useStore(state => state);
+
+  const [user, setUser] = useState({
+    email: "hello@anjana784.dev",
+    username: "anjana784",
+    password: "52155110aA"
+  })
+
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/home');
+  }, [authenticated, navigate])
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await register(user);
+    console.log(res.response);
+    // setAuthenticated(true);
+    if (res.response.data.status === "success") {
+      setAuthenticated(true);
+      navigate('/home');
+    } else {
+      setError('Invalid credentials');
+    }
+  }
 
   return (
     <main>
@@ -33,25 +64,35 @@ export const Login = () => {
 
             <div>
               <form>
-                <input type="email" placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
+                <input type="email" placeholder="Email" value={user.email}
+                  onChange={(e) => setUser({
+                    ...user,
+                    email: e.target.value
+                  })}
                 />
-                <input type="username" placeholder="Username"
-                  onChange={(e) => setEmail(e.target.value)}
+                <input type="username" placeholder="Username" value={user.username}
+                  onChange={(e) => setUser({
+                    ...user,
+                    username: e.target.value
+                  })}
                 />
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" value={user.password}
+                  onChange={(e) => setUser({
+                    ...user,
+                    password: e.target.value
+                  })}
+                />
                 <input type="password" placeholder="confirm Password" />
               </form>
+              {/* {error && <div className="error">{error}</div>} */}
             </div>
 
             <div>
-              <input type="submit" value="Sign up" />
+              <button value="Sign up" onClick={handleSubmit} className="buttonLogin" >Sign Up</button>
             </div>
             <div className="loginlink">
               If you are already a member please{" "}
               <Link to="/login">Login</Link>
-
-
             </div>
           </div>
           <div className="col-2">

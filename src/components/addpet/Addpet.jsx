@@ -1,30 +1,41 @@
 import React, { useState } from 'react';
 import Navbar from '../navbar/Navbar';
 import "./Addpet.css"
+import { createPet } from '../../api/pet';
 
 function Addpet() {
-  const [petName, setPetName] = useState('');
-  const [age, setAge] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [location, setLocation] = useState('');
 
-  const handleSubmit = (e) => {
+  const [pet, setPet] = useState({
+    petName: "",
+    age: "",
+    phoneNumber: "",
+    location: "",
+    image: ""
+  })
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can add your form submission logic here
+    console.log(pet);
+    const res = await createPet(pet);
+    console.log(res);
   };
 
   return (
     <div>
       <div><Navbar /></div>
       <div className="form-container">
-        <h1>Give them a home</h1>
+        <h1 className='formHeader'>Give them a home</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-field">
             <label>Pet Name</label>
             <input
               type="text"
-              value={petName}
-              onChange={(e) => setPetName(e.target.value)}
+              value={pet.petName}
+              onChange={(e) => setPet({
+                ...pet,
+                petName: e.target.value
+              })
+              }
               required
             />
           </div>
@@ -32,8 +43,11 @@ function Addpet() {
             <label>Age</label>
             <input
               type="text"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
+              value={pet.age}
+              onChange={(e) => setPet({
+                ...pet,
+                age: e.target.value
+              })}
               required
             />
           </div>
@@ -41,8 +55,11 @@ function Addpet() {
             <label>Phone Number</label>
             <input
               type="text"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={pet.phoneNumbe}
+              onChange={(e) => setPet({
+                ...pet,
+                phoneNumber: e.target.value
+              })}
               required
             />
           </div>
@@ -50,8 +67,11 @@ function Addpet() {
             <label>Location</label>
             <input
               type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              value={pet.location}
+              onChange={(e) => setPet({
+                ...pet,
+                location: e.target.value
+              })}
               required
             />
           </div>
@@ -59,7 +79,7 @@ function Addpet() {
             <label>Browse</label>
             <input type="file" />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </div>
