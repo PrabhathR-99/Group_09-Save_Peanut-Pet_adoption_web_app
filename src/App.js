@@ -19,17 +19,10 @@ const App = () => {
           <Route index element={<Login />} />
           <Route path="/signup" element={<Login />} />
           <Route path="/login" element={<Rlogin />} />
-          {
-            authenticated ? (
-              <>
-                <Route path="/home" element={<Home />} />
-                <Route path="/addpet" element={<Addpet />} />
-                <Route path="/profile" element={<ProfilePage />} />
-              </>
-            ) : (
-              <Route path="*" element={<Login />} />
-            )
-          }
+          <Route path="/home" element={<Home />} />
+          <Route path="/addpet" element={<Addpet />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

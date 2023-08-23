@@ -12,33 +12,33 @@ export const Login = () => {
   const { setAuthenticated, authenticated } = useStore(state => state);
 
   const [user, setUser] = useState({
-    email: "hello@anjana784.dev",
-    username: "anjana784",
-    password: "52155110aA"
+    email: "",
+    username: "",
+    password: ""
   })
 
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate('/home');
-  }, [authenticated, navigate])
+  // useEffect(() => {
+  //   navigate('/home');
+  // }, [authenticated, navigate])
 
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await register(user);
-    console.log(res.response);
-    // setAuthenticated(true);
-    if (res.response.data.status === "success") {
-      setAuthenticated(true);
-      navigate('/home');
-    } else {
-      setError('Invalid credentials');
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const res = await register(user);
+  //   console.log(res.response);
+  //   // setAuthenticated(true);
+  //   if (res.response.data.status === "success") {
+  //     setAuthenticated(true);
+  //     navigate('/home');
+  //   } else {
+  //     setError('Invalid credentials');
+  //   }
+  // }
 
   return (
     <main>
@@ -88,7 +88,9 @@ export const Login = () => {
             </div>
 
             <div>
-              <button value="Sign up" onClick={handleSubmit} className="buttonLogin" >Sign Up</button>
+              <button value="Sign up" className="buttonLogin" onClick={
+                () => navigate('/home')
+              } >Sign Up</button>
             </div>
             <div className="loginlink">
               If you are already a member please{" "}

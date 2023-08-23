@@ -1,25 +1,28 @@
 import React from 'react'
 import './Navbar.css';
 import LogoPng from './assests/LogoPng.png'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    
-    return(
+
+    const navigate = useNavigate();
+
+    return (
         <header className="header">
 
-               
+
             <nav className="nav container">
                 <div className="logo">
-                <img src={LogoPng} alt="logo" style={{ width: '70px', }} />
+                    <img src={LogoPng} alt="logo" style={{ width: '70px', }} />
                 </div>
 
                 <div className="nav__menu">
                     <ul className="nav__list grid">
 
                         <li className="nav__item">
-                            <a href="#hero " className="nav__link active-link">
+                            <Link to={'/home'} className="nav__link active-link">
                                 <i className="uli uil-estate nav__icon"></i>Home
-                            </a>
+                            </Link>
                         </li>
 
                         <li className="nav__item">
@@ -29,28 +32,32 @@ const Navbar = () => {
                         </li>
 
                         <li className="nav__item">
-                            <a href="#services" className="nav__link">
+                            <a href='#' className="nav__link">
                                 <i class="uil uil-briefcase nav__icon"></i>
                                 My Profile
                             </a>
                         </li>
 
-                        
 
-                        
+
+
                         <li className="nav__item">
-                               <button className='button'><a href="#contact" className="nav__link">
-                               <i class="uil uil-message nav__icon"></i> <div className='nav__nme'>Add Pet</div></a></button>        
+                            <button className='button' onClick={
+                                () => {
+                                    navigate('/addpet');
+                                }
+                            }><a href="#contact" className="nav__link">
+                                    <i class="uil uil-message nav__icon"></i> <div className='nav__nme'>Add Pet</div></a></button>
                         </li>
 
-                       
-                      
-                        
-                        
 
-                     
+
+
+
+
+
                     </ul>
-                    
+
                 </div>
             </nav>
         </header>

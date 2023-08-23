@@ -52,15 +52,27 @@ function Home() {
       <div postsco>
         <div social-media-feed>
           <div className="post-container">
-            {
-              pets.map((pet) => (
-                <SocialMediaPost
-                  key={pet._id}
-                  petName={pet.petName}
-                  age={pet.age}
-                  location={pet.location}
-                />))
-            }
+            <SocialMediaPost
+              ownerName={"Prabhath"}
+              petName={"Peanut"}
+              age={"2"}
+              gender={'male'}
+              location={'Colombo'}
+            />
+            <SocialMediaPost
+              ownerName={"Rathnayake"}
+              petName={"Tommy"}
+              age={"8"}
+              gender={'male'}
+              location={'Colombo'}
+            />
+            <SocialMediaPost
+              ownerName={"Anjana"}
+              petName={"Bula"}
+              age={"12"}
+              gender={'male'}
+              location={'Colombo'}
+            />
           </div>
         </div>
       </div>
