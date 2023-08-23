@@ -17,7 +17,7 @@ main {
 .register {
   max-width: 920px;
   width: 920px;
-  height: 550px;
+  height: 650px;
   display: flex;
   border-radius: 20px;
   box-shadow: 1px 6px 10px #e9ecef;
@@ -33,6 +33,7 @@ main {
   gap: 20px;
 }
 input[type="email"],
+input[type="username"],
 input[type="password"] {
   padding: 10px;
   font-size: 0.9rem;
@@ -45,6 +46,7 @@ input[type="password"] {
 }
 
 input[type="email"]::placeholder,
+input[type="username"]::placeholder,
 input[type="password"]::placeholder {
   letter-spacing: 2px;
   transition: all 0.3s ease;
@@ -53,6 +55,7 @@ input[type="password"]::placeholder {
 }
 
 input[type="email"]:hover::placeholder,
+input[type="username"]::placeholder,
 input[type="password"]:hover::placeholder {
   color: white;
 }

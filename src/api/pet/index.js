@@ -9,7 +9,7 @@ export const getAllPets = async () => {
     }
 }
 
-const getPetById = async (id) => {
+export const getPetById = async (id) => {
     try {
         const res = await axiosInstance.get(`/pet/${id}`);
         return res.data;

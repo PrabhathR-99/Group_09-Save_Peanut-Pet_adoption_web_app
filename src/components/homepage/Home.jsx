@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../navbar/Navbar';
 import './Home.css'; // Make sure to create this CSS file for styling
 import Cover from "./assests/cover01.png"
 import Cover2 from "./assests/cover02.png"
 import SocialMediaPost from '../socialmediapost/SocialMediaPost';
 import Footer from './footerp/Footer';
+import { useStore } from '../../store';
+import { getAllPets } from '../../api/pet';
 
 function Home() {
+
+  const { pets, setPets } = useStore(state => state);
+
+  const fetchPets = async () => {
+    try {
+      const res = await getAllPets();
+      console.log(res);
+      setPets(res.data);
+    } catch (error) {
+      console.error('Error fetching pets', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchPets();
+  }, []);
+
+  useEffect(() => {
+    console.log(pets);
+  }, [pets]);
+
   return (
     <div>
       <div><Navbar /></div>
@@ -27,12 +50,18 @@ function Home() {
         </div>
       </div>
       <div postsco>
-        <div className="post-container">
-          <SocialMediaPost />
-          <SocialMediaPost />
-        </div>
-        <div className="post-container">
-          <SocialMediaPost />
+        <div social-media-feed>
+          <div className="post-container">
+            {
+              pets.map((pet) => (
+                <SocialMediaPost
+                  key={pet._id}
+                  petName={pet.petName}
+                  age={pet.age}
+                  location={pet.location}
+                />))
+            }
+          </div>
         </div>
       </div>
       <div>

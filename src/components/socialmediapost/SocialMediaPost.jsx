@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './SocialMediaPost.css'; // Make sure to create this CSS file for styling
 
-function SocialMediaPost() {
+function SocialMediaPost({
+  ownerName,
+  petName,
+  age,
+  gender,
+  location,
+}) {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -15,7 +21,7 @@ function SocialMediaPost() {
           {/* Profile picture image */}
         </div>
         <div className="owner-details">
-          <span>Owner's Name</span>
+          <span>{ownerName}</span>
           <button className="cross-icon">&#x2716;</button>
         </div>
       </div>
@@ -25,10 +31,10 @@ function SocialMediaPost() {
           {/* Photo image */}
         </div>
         <div className="post-details">
-          <p>Name: Amelia</p>
-          <p>Age: 3</p>
-          <p>Gender: Male</p>
-          <a href="#">Location</a>
+          <p>Name: {petName}</p>
+          <p>Age: {age}</p>
+          <p>Gender: {gender}</p>
+          <a href="#">{location}</a>
         </div>
       </div>
       <hr className="post-divider" />

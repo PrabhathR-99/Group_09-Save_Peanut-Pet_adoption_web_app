@@ -13,10 +13,14 @@ function Addpet() {
     image: ""
   })
 
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(pet);
+    setLoading(true);
     const res = await createPet(pet);
+    setLoading(false);
     console.log(res);
   };
 
@@ -74,6 +78,15 @@ function Addpet() {
               })}
               required
             />
+          </div>
+          <div classname="Gender">
+            <div className='Gender1'>
+              <input type="radio" value="Male" name="gender" /> Male
+            </div>
+            <div className='Gender2'>
+              <input type="radio" value="Female" name="gender" /> Female
+
+            </div>
           </div>
           <div className="form-field">
             <label>Browse</label>

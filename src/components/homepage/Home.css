@@ -79,3 +79,8 @@
 .postsco {
   margin-top: 40px;
 }
+
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+}
